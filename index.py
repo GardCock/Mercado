@@ -2,6 +2,7 @@
 import pandas as pd
 import seaborn as sns
 import sqlalchemy
+import matplotlib.pyplot as plt
 
 user = "root"
 passw = ""
@@ -21,13 +22,13 @@ pd.read_sql('INSERT INTO Setor (nome) VALUES ("Adminstrativo")', engine)
 pd.read_sql('INSERT INTO Vendas (produto_id, data, quantidade, funcionario_id) VALUES (4, "2024-10-01", 4, 1)', engine)
 
 box = sns.boxplot(product["preco"])
-print(box)
+plt.show()
 
 plot = product["preco"].plot(kind="hist")
-print(plot)
+plt.show()
 
 dist = sns.distplot(product["preco"])
-print(dist)
+plt.show()
 
 desc = product["preco"].describe()
 print(desc)
